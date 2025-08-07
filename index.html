@@ -18,6 +18,7 @@
       min-height: 100vh;
       text-align: center;
     }
+
     .container {
       background: rgba(0, 0, 0, 0.4);
       padding: 30px;
@@ -25,14 +26,17 @@
       max-width: 90%;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
+
     h1 {
       font-size: 28px;
       margin-bottom: 12px;
     }
+
     p {
       font-size: 18px;
       margin: 12px 0;
     }
+
     .code {
       background-color: #FFD700;
       color: #3D0066;
@@ -43,6 +47,7 @@
       display: inline-block;
       margin: 16px 0;
     }
+
     .footer {
       font-size: 14px;
       margin-top: 20px;
@@ -50,8 +55,29 @@
     }
   </style>
 
-  <!-- ✅ Google Analytics (Replace with your GA4 Measurement ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1L3BZN3JMB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gt
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1L3BZN3JMB');
+  </script>
+
+  <!-- ✅ Alert popup -->
+  <script>
+    window.onload = function() {
+      alert("🎉 Your Keventers Coupon: KeventersSwiply25\n\nShow this code to the cashier to get 25% OFF on your order!");
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Keventers x Swiply</h1>
+    <p>You’ve unlocked an exclusive student deal!</p>
+    <p class="code">KeventersSwiply25</p>
+    <p>✅ Show this to the cashier to get <strong>25% off</strong> your order.</p>
+    <p class="footer">Offer valid only at participating Keventers outlets. One-time use per student.</p>
+  </div>
+</body>
+</html>
