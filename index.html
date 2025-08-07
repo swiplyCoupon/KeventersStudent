@@ -53,6 +53,49 @@
       margin-top: 20px;
       opacity: 0.7;
     }
+
+    /* ✅ Custom popup styles */
+    .custom-alert {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      color: #3D0066;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      z-index: 9999;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .custom-alert h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #7f00ff;
+    }
+
+    .custom-alert p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .custom-alert button {
+      padding: 6px 20px;
+      border: none;
+      background-color: #7f00ff;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
   </style>
 
   <!-- ✅ Google Analytics -->
@@ -64,10 +107,18 @@
     gtag('config', 'G-1L3BZN3JMB');
   </script>
 
-  <!-- ✅ Alert popup -->
+  <!-- ✅ Custom popup script -->
   <script>
-    window.onload = function() {
-      alert("🎉 Your Keventers Coupon: KeventersSwiply25\n\nShow this code to the cashier to get 25% OFF on your order!");
+    window.onload = function () {
+      const div = document.createElement('div');
+      div.className = 'custom-alert';
+      div.innerHTML = `
+        <h3>🎉 Congratulations!</h3>
+        <p>Your Keventers Coupon: <strong>KeventersSwiply25</strong></p>
+        <p>Show this code to the cashier to get <strong>25% OFF</strong> on your order.</p>
+        <button onclick="this.parentElement.remove()">OK</button>
+      `;
+      document.body.appendChild(div);
     };
   </script>
 </head>
